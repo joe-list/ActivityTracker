@@ -1,3 +1,92 @@
-<div data-role="view" data-title="Settings" data-layout="main" data-model="APP.models.settings">
+<div data-role="view" data-title="Settings" id="Settings" data-layout="main" data-show="Settings.show" data-hide="Settings.hide" data-reload="true">
   <h1 data-bind="html: title"></h1>
+    <div class="SettingsGroup">
+        <div class="SettingGroupHeader">GPS Tracking Settings</div>
+        <div class="SettingsRow">
+            <div class="SettingsText">
+                Enable Automatic Tracking
+            </div>
+            <div class="SettingsControl">
+                <input id="AutoTrack" type="checkbox" data-role="switch" ></input>
+            </div>
+        </div>
+    </div>
+    <div class="SettingsGroup">
+        <div class="SettingGroupHeader">Weekly Settings</div>
+        <div class="SettingsRow">
+            <div class="SettingsText">
+                Monday
+            </div>
+            <div class="SettingsControl">
+                <input id="MondaySelect" type="checkbox" data-role="switch" ></input>
+            </div>
+        </div>
+        <div class="SettingsRow">
+            <div class="SettingsText">
+                Tuesday
+            </div>
+            <div class="SettingsControl">
+                <input id="TuesdaySelect" type="checkbox" data-role="switch" ></input>
+            </div>
+        </div>
+        <div class="SettingsRow">
+            <div class="SettingsText">
+                Wednesday
+            </div>
+            <div class="SettingsControl">
+                <input id="WednesdaySelect" type="checkbox" data-role="switch" ></input>
+            </div>
+        </div>
+        <div class="SettingsRow">
+            <div class="SettingsText">
+                Thursday
+            </div>
+            <div class="SettingsControl">
+                <input id="ThursdaySelect" type="checkbox" data-role="switch" ></input>
+            </div>
+        </div>
+        <div class="SettingsRow">
+            <div class="SettingsText">
+                Friday
+            </div>
+            <div class="SettingsControl">
+                <input id="FridaySelect" type="checkbox" data-role="switch" ></input>
+            </div>
+        </div>
+        <div class="SettingsRow">
+            <div class="SettingsText">
+                Saturday
+            </div>
+            <div class="SettingsControl">
+                <input id="SaturdaySelect" type="checkbox" data-role="switch" ></input>
+            </div>
+        </div>
+        <div class="SettingsRow">
+            <div class="SettingsText">
+                Sunday
+            </div>
+            <div class="SettingsControl">
+                <input id="SundaySelect" type="checkbox" data-role="switch" ></input>
+            </div>
+        </div>
+    </div>
+    <div class="SettingsGroup">
+        <div class="SettingGroupHeader">Time Settings</div>
+        <div class="SettingsRow">
+            <div class="SettingsText">
+                Start Time
+            </div>
+            <div class="SettingsControl">
+                <input id="StartTimeSelect" data-role="timepicker"></input>
+            </div>
+        </div>
+        <div class="SettingsRow">
+            <div class="SettingsText">
+                End Time
+            </div>
+            <div class="SettingsControl">
+                <input id="EndTimeSelect" data-role="timepicker"></input>
+            </div>
+        </div>
+    </div>
 </div>

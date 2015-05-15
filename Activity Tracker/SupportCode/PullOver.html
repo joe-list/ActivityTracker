@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    <link href="styles/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.318/styles/kendo.common.min.css">
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.318/styles/kendo.rtl.min.css">
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.318/styles/kendo.default.min.css">
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.318/styles/kendo.dataviz.min.css">
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.318/styles/kendo.dataviz.default.min.css">
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.318/styles/kendo.mobile.all.min.css">
+
+    <script src="cordova.js"></script>
+    <script src="kendo/js/jquery.min.js"></script>
+    <script src="kendo/js/kendo.mobile.min.js"></script>
+    <script src="kendo/js/everlive.all.min.js"></script>
+    <script src="kendo/js/angular.min.js"></script>
+    <script src="kendo/js/jszip.min.js"></script>
+    <script src="kendo/js/kendo.all.min.js"></script>
+    
+    <script type="text/javascript" src="https://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0&s=1"></script>
+
+    <script src="scripts/LocationSvc.js"></script>
+    
+    <script src="scripts/app.js"></script>
+    
+    <style>
+    
+    .k-edit-form-container
+    {
+    	width:300px!important;
+      padding-left:10px!important;
+      padding-right:10px!important;
+    
+    }
+    </style>
+    
+</head>
+<body>
+    <div data-role="view" id="login" data-title="Login" data-model="loginView">
+      <div data-role="navbar">
+          <span data-role="view-title"></span>
+      </div>
+      <form>
+          <ul data-role="listview" data-style="inset">
+              <li>
+                  <label>
+                      Username:
+                      <input type="text" name="username" data-bind="value: username">
+                  </label>
+              </li>
+              <li>
+                  <label>
+                      Password:
+                      <input type="password" name="password" data-bind="value: password">
+                  </label>
+              </li>
+              <li>
+                  <button style="width: 100%" data-role="button" data-bind="click: submit" id="LoginButton">Login</button>
+              </li>
+          </ul>
+      </form>
+        <a href="#register">Create an account</a>
+        <a href="#password">Forgot Password?</a>
+    </div>
+    <div data-role="view" id="register" data-title="Register" data-model="registerView">
+        <div data-role="navbar">
+            <a href="#login" data-align="left" data-role="button">Back</a>
+            <span data-role="view-title"></span>
+        </div>
+        <form>
+            <ul data-role="listview" data-style="inset">
+                <li>
+                    <label>
+                        Email Address:
+                        <input type="email" name="email" data-bind="value: email">
+                    </label>
+              </li>
+              <li>
+                  <label>
+                      Username:
+                      <input type="text" name="username" data-bind="value: username">
+                  </label>
+              </li>                
+              <li>
+                  <label>
+                      Password:
+                      <input type="password" name="password" data-bind="value: password">
+                  </label>
+              </li>
+              <li>
+                  <button style="width: 100%" data-role="button" data-bind="click: submit">Register</button>
+              </li>
+          </ul>
+      </form>
+    </div>
+    <div data-role="view" id="password" data-title="Reset Password" data-model="passwordView">
+      <div data-role="navbar">
+          <a href="#login" data-align="left" data-role="button">Back</a>
+          <span data-role="view-title"></span>
+      </div>
+      <form>
+          <ul data-role="listview" data-style="inset">
+              <li>
+                  <label>
+                      Email Address:
+                      <input type="email" name="email" data-bind="value: email">
+                  </label>
+              </li>
+              <li>
+                  <button style="width: 100%" data-role="button" data-bind="click: submit">Reset</button>
+              </li>
+          </ul>
+      </form>
+    </div>
+    <div data-role="view" id="list" data-title="Activity List" data-stretch="false">
+        <div data-role="navbar">
+            <a data-role="button" data-align="left" data-rel="view" href="#GPS">GPS</a>
+            <a data-role="button" data-align="left" data-rel="view" href="#ActivityMap">Map</a>
+            <a data-role="button" data-align="right" data-rel="view" onclick="AddEvent();">Add</a>
+        </div>
+        <script id="editor" type="text/x-kendo-template">
+           <h3>Edit Activity</h3>
+           <p>
+               <label>Title:</label></br>
+               <input style="width:280px;" name="title" />
+           </p>
+           <p>
+                <label> Description: </label></br>
+              <textarea  style="width:280px;" name="description" />
+           </p>
+           <p>
+               <label>Start:</label></br>
+               <input data-role="datetimepicker" name="start" />
+           </p>
+           <p>
+               <label>End:</label></br>
+               <input data-role="datetimepicker" name="end" />
+           </p>
+        </script>
+        <div id="scheduler"></div>
+        <script>
+            $("#scheduler").kendoScheduler({
+              date: new Date("2013/6/6"),
+              showWorkHours: true,
+              allDaySlot: false,
+              editable: {
+                template: $("#editor").html()
+              },
+              snap: true,
+              views: ["day", "week"],
+              dataSource: [
+                {
+                  id: 1,
+                  start: new Date("2013/6/6 08:00 AM"),
+                  end: new Date("2013/6/6 09:00 AM"),
+                  title: "Interview",
+                  description:"Sample Description"
+                }
+              ]
+            });
+            
+            function AddEvent()
+              {
+                var scheduler = $("#scheduler").data("kendoScheduler");
+                    scheduler.addEvent({ title: "(No title)" });
+              }
+            </script>
+    
+    <div data-role="view" id="add" data-model="</div>addActivityView" data-show="addActivityView.show" data-after-show="addActivityView.aftershow">
+  <div data-role="header">
+      <div data-role="navbar">
+          <span>Add Activity</span>
+      </div>
+  </div>
+
+  <ul data-role="listview" data-style="inset">
+      <li>
+          <label>
+              Title:  <input type="text" data-bind="value: Title"></input>
+          </label>
+      </li>
+      <li>
+          <label>
+              Description:  <textarea type="text" data-bind="value: Description"></textarea>
+          </label>
+      </li>
+      <li>
+          <label>
+              Start:  <input id="timestart" data-role="timepicker" data-bind="value: Start"></input>
+          </label>
+      </li>
+      <li>
+          <label>
+              End:  <input id="timeend" data-role="timepicker" data-bind="value: End"></input>
+          </label>
+
+      </li>
+  </ul>
+
+  <button data-bind="click: add" class="add-button" data-role="button">Add</button>
+  <button data-bind="click: close" class="close-button" data-role="button">Close</button>    
+</div>
+	<div data-role="view" id="GPS" data-model="GPSResults">
+    <div data-role="header">
+      <div data-role="navbar">
+          <span>View GPS Results</span>
+            <a data-role="button" data-align="left" data-rel="view" href="#list">List</a>
+      </div>
+    </div>
+    <div>
+        <button id="GetGPSButton" data-bind="click: add">Refresh GPS</button>
+    </div>
+    <div>
+        <label id="GPSResults"></label>
+    </div>
+</div>
+	<div data-role="view" id="ActivityMap" data-model="ActivityMap" data-stretch="true" data-show="ActivityMap.Show">
+    <div data-role="header">
+      <div data-role="navbar">
+          <span>Location Map</span>
+            <a data-role="button" data-align="left" data-rel="view" href="#list">List</a>
+      </div>
+    </div>
+    <div>
+        <div id="map" style="background-color:green;">Map Load</div>
+    </div>
+    <div>
+    </div>
+</div>
+</body>
+</html>

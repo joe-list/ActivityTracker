@@ -1,3 +1,84 @@
-<div data-role="view" data-title="Home" data-layout="main" data-model="APP.models.home">
-  <h1 data-bind="html: title"></h1>
+<div data-role="view" data-title="Home" id="Home" data-layout="main" data-show="Home.show" data-hide="Home.hide" data-model="Home.models.Home">
+  <h1></h1>
+    <div id="contentDiv" class="ContentDiv">
+        <div class="ButtonDiv">
+            <a id="SaveLocationBtn"  data-rel="modalview" class="InputButton" data-role="button" data-click="Home.ShowSaveLocation" >
+                Save Location
+            </a>
+        </div>
+        <div data-role="modalview" id="SaveLocationView" class="ActivityModalView" data-model="Home.models.SaveLocation" style="width: 200px; height: 200px">
+            <div id="contentDiv" class="ContentDiv">
+                <div class="ItemRow">
+                    <div class="ItemTextDiv">
+                        Title:
+                    </div>
+                    <div class="ItemInputDiv">
+                        <input name="Locationtitle" />
+                    </div>
+                </div>
+                <div class="ItemRow">
+                    <div class="ItemTextDiv">
+                        Description:
+                    </div>
+                    <div class="ItemInputDiv">
+                        <textarea  name="LocationDescription"></textarea>
+                    </div>
+                </div>
+            </div>
+            <a id="SaveLocationBtn"  class="ModalInputButton" data-role="button" data-click="Home.AddSaveLocation" >
+                Add
+            </a>
+            <a id="SaveLocationBtn"  class="ModalInputButton" data-role="button" data-click="Home.HideSaveLocation" >
+                Close
+            </a>
+        </div>
+        <div class="ButtonDiv">
+            <a id="ReportActivityBtn" data-rel="modalview" class="InputButton" data-role="button" data-click="Home.ShowAddActivity" >
+               Add Activity
+            </a>
+        </div>
+        <div data-role="modalview" id="AddActivityView" class="ActivityModalView" data-model="Home.models.AddActivity" style="width: 200px; height: 300px">
+            <div id="contentDiv" class="ContentDiv">
+                <div class="ItemRow">
+                    <div class="ItemTextDiv">
+                        Title:
+                    </div>
+                    <div class="ItemInputDiv">
+                        <input name="ActivityTitle"/>
+                    </div>
+                </div>
+                <div class="ItemRow">
+                    <div class="ItemTextDiv">
+                        Description:
+                    </div>
+                    <div class="ItemInputDiv">
+                        <textarea  name="ActivityDescription"></textarea>
+                    </div>
+                </div>
+                <div class="ItemRow">
+                    <div class="ItemTextDiv">
+                        Start:
+                    </div>
+                    <div class="ItemInputDiv">
+                        <input data-role="datetimepicker" name="ActivityStart" />
+                    </div>
+                </div>
+                <div class="ItemRow">
+                    <div class="ItemTextDiv">
+                        End:
+                    </div>
+                    <div class="ItemInputDiv">
+                        <input data-role="datetimepicker" name="ActivityEnd" />
+                    </div>
+                </div>
+            </div>
+            <a id="SaveLocationBtn"  class="ModalInputButton" data-role="button" data-click="Home.DataAddActivity" >
+                Add
+            </a>
+            <a id="SaveLocationBtn"  class="ModalInputButton" data-role="button" data-click="Home.HideAddActivity" >
+                Close
+            </a>
+        </div>
+    </div>
+        
 </div>

@@ -1,0 +1,39 @@
+<div data-role="view" data-title="Registration" id="Registration" data-layout="main" data-model="Registration.models.Registration" data-show="Login.show" data-hide="Login.hide" data-reload="true">
+	<div data-role="navbar">
+        <a href="views/AccountMgmt/login.html" data-align="left" data-role="button">Back</a>
+        <span data-role="view-title"></span>
+    </div>
+    <form>
+        <ul data-role="listview" data-style="inset">
+            <li>
+                <label>
+                    Email Address:
+                    <input type="email" name="email" data-bind="value: email">
+                </label>
+          </li>
+          <li>
+              <label>
+                  Username:
+                  <input type="text" name="username" data-bind="value: username">
+              </label>
+          </li>                
+          <li>
+              <label>
+                  Password:
+                  <input type="password" name="password" data-bind="value: password">
+              </label>
+          </li>
+          <li>
+              <button style="width: 100%" data-role="button" data-bind="click: submit">Register</button>
+          </li>
+      </ul>
+  </form>
+</div>
+
+
+
+
+
+
+
+        <

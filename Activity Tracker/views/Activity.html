@@ -1,0 +1,61 @@
+<div data-role="view" data-title="Activity" id="Activity" data-layout="main" data-model="Activity.models.Location" data-show="Activity.show" data-hide="Activity.hide" data-reload="true">
+    <div>
+        <div class="HeaderDiv">
+            <div style="float:left; width:50px; padding-top:6px;">
+                Date:  
+            </div>
+            <div style="float:left; width:100px;">
+                <input id="ActivityDatePicker" class="DatePickerInput" ></input>
+            </div>
+        </div>
+    	<div class="ContentDiv">
+            <div style="float:left; width:100%;">
+                <div id="listView"></div>
+            </div>
+            <script type="text/x-kendo-tmpl" id="template">
+             <div class="ActivityItemRow">
+               <p>#:Address#</p>
+               <i>#:kendo.toString(CreatedAt, "g")#</i> - <i>#:kendo.toString(EndTime, "g")#</i>
+               <div style="float:right">
+                   <a class="k-button k-delete-button" href="\\#"><span class="km-icon km-delete"></span></a>
+               </div>
+               <hr/>
+             </div>
+         </script>
+             <script type="text/x-kendo-tmpl" id="editTemplate">
+             <fieldset>
+             <legend>Edit Activity: #:title#</legend>
+                 <label>Title</label>
+                 <input type="text" data-bind="value:title" name="title" class="form-control" required="required" />
+                 <label>Description</label>
+                 <textarea data-bind="value:description" data-role="textarea" rows="5"  class="form-control" data-type="text" name="description"></textarea>
+                 <br/>
+                 <table>
+                     <tr style='vertical-align:top'>
+                         <td>
+                             <label>Start</label>
+                             <br/>
+                             <input type="text" data-bind="value:start" data-role="datepicker" data-type="date" name="start"/>
+                             <br/>
+                             <label>End</label>
+                             <br/>
+                             <input type="text" data-bind="value:end" data-role="datepicker" data-type="date" name="end"/>
+                         </td>
+                         <td>
+                             <label>Address</label>
+                             <span data-bind="value:location"></span> 
+                         </td>
+                     </tr>
+                 </table>
+
+               <div>
+                   <div style="float:right">
+                       <a class="k-button k-delete-button" href="\\#"><span class="km-icon km-delete"></span></a>
+                       <a class="k-button k-edit-button" href="\\#"><span class="km-icon km-details"></span></a>
+                   </div>
+               </div>
+             </fieldset>
+         </script>
+    	</div>
+    </div>
+</div>

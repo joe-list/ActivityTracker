@@ -1,0 +1,167 @@
+body {
+}
+
+.ContentDiv
+{
+    text-align:center; 
+    width:100%;
+}
+
+.ButtonDiv
+{
+    text-align:center; 
+    width:100%; 
+    padding-bottom:20px;
+}
+
+.InputButton
+{
+    width:150px;
+    height:50px;
+}
+.km-content
+{
+    background-color:#ffffff!important;
+}
+
+.k-edit-form-container
+{
+    width:300px!important;
+  padding-left:10px!important;
+  padding-right:10px!important;
+
+}
+
+.ModalView
+{
+    width:200px;
+    height:200px;
+    margin:auto;
+
+}
+
+.SettingsGroup
+{
+    float:left;
+    width:100%;
+    padding-left:5px;
+    padding-right:5px;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+.SettingGroupHeader
+{
+    float:left;
+    width:100%;
+    font-size:16px;
+    padding-bottom:10px;
+}
+
+.SettingsRow
+{
+    width:100%;
+    float:left;
+    padding-bottom:5px;
+    
+}
+
+.SettingsText
+{
+    float:left;
+    padding-left:20px;
+}
+
+.SettingsControl
+{
+    float:right;
+    padding-right:20px;
+}
+.ActivityItemRow
+{
+    width:100%;
+    float:left;
+}
+.ActivityItemHeader
+{
+    
+}
+.form-control {
+  display: block;
+  width: 90%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.HeaderDiv
+{
+    float:left;
+    width:100%;
+    padding-bottom:10px;
+    padding-top:10px;
+    padding-left:5px;
+    padding-right:5px;
+}
+.ContentDiv
+{
+    float:left;
+    width:100%;
+    padding-bottom:10px;
+}
+.DatePickerTitle
+{
+    width:125px;
+    float:left;
+    padding-top:5px;
+    padding-right:1px;
+    font-weight:bold;
+}
+.HeaderSection
+{
+    float:left;
+    width:80px;
+}
+
+.HeaderSectionRight
+{
+    float:right;
+    width:100px;
+}
+.DatePickerInputDiv
+{
+    width:130px;
+    float:right;
+    
+}
+
+.DatePickerInput
+{
+    width:100px;
+}
+
+.ActivityPane
+{
+    float:left;
+    width:50%;
+}
+
+#listViewAR
+{
+    overflow:visible;
+}
+.km-stretched-view
+{
+    height:100%;
+}

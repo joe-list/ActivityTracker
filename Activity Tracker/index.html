@@ -3,35 +3,64 @@
 <head>
     <title></title>
     <meta charset="utf-8" />
+    
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.408/styles/kendo.common.min.css">
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.408/styles/kendo.rtl.min.css">
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.408/styles/kendo.default.min.css">
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.408/styles/kendo.dataviz.min.css">
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.408/styles/kendo.dataviz.default.min.css">
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2015.1.408/styles/kendo.mobile.all.min.css">
+    
     <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
-    <link href="styles/main.css" rel="stylesheet" />
+    <link href="kendo/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="kendo/styles/kendo.default.min.css" rel="stylesheet" />
+    <link href="kendo/styles/kendo.rtl.min.css" rel="stylesheet" />
+    
+    <link href="styles/ActivityTrackerUI.css" rel="stylesheet" />
 
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
+    <script src="kendo/js/kendo.all.min.js"></script>
+    <script src="kendo/js/everlive.all.min.js"></script>
 
     <script src="scripts/app.js"></script>
-
+    <script src="scripts/Activity.js"></script>
+    <script src="scripts/AddActivity.js"></script>
+    <script src="scripts/ActivityReport.js"></script>
+    <script src="scripts/Home.js"></script>
+    <script src="scripts/Locations.js"></script>
+    <script src="scripts/Settings.js"></script>
+    <script src="scripts/About.js"></script>
+    <script src="scripts/AccountMgmt/Login.js"></script>
+    <script src="scripts/AccountMgmt/Registration.js"></script>
+    
+    <script src="SupportCode/BingMaps.js"></script>
+    <script src="SupportCode/LocationSvc.js"></script>
+    <script src="BackgroundGeoLocation.js"></script>
+    
+    <script type="text/javascript" src="https://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0&s=1"></script>
+    
+ 
 </head>
 <body>
  
-    <div data-role="layout" data-id="main">
+    <div data-role="layout" data-id="main" style="height:100%">
         <div data-role="header">
             <div data-role="navbar">
-                <span data-role="view-title"></span>
             </div>
         </div>
 
         <!-- application views will be rendered here -->
         
-        <div data-role="footer">
+        <div data-role="footer" class="AppFooter">
             <div data-role="tabstrip">
-                <a href="views/home.html" data-icon="home">Home</a>   
+                <a href="views/Activity.html" data-icon="toprated">My Activity</a>
+                <a href="views/ActivityReport.html" data-icon="contacts">My Reports</a>
+                <a href="views/Locations.html" data-icon="globe">My Locations</a>
                 <a href="views/settings.html" data-icon="settings">Settings</a>
-                <a href="views/contacts.html" data-icon="contacts">Contacts</a>
             </div>
         </div>
     </div>
-
 </body>
 </html>

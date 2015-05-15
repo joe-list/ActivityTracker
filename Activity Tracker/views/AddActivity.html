@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+</head>
+<body>
+<div data-role="layout" data-id="main">
+    <div data-role="header">
+        <div data-role="navbar">
+            <a href="views/Activity.html" data-role="button">Activity</a>
+        </div>
+    </div>
+</div> 
+<div data-role="view" id="AddActivity" data-layout="main" data-model="AddActivity.Models.AddActivity" data-show="AddActivity.show" data-after-show="AddActivity.aftershow">
+  <h1 data-bind="html: Header"></h1>
+    <div id="contentDiv" class="ContentDiv">
+        <div class="ButtonDiv">
+            <button id="SaveLocationBtn" class="InputButton" data-role="button" data-click="AddActivity.add">
+                Add
+            </button>
+            <button id="SaveLocationBtn" class="InputButton" data-role="button" data-click="AddActivity.close">
+                Close
+            </button>
+        </div>
+    </div 
+</div>

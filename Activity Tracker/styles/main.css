@@ -356,3 +356,9 @@ body, html {
         background-size: 100%;
     }
 }
+
+.ContentRow
+{
+    float:left;
+    width:100%;
+}
